@@ -1,7 +1,12 @@
-package com.ld.design.simple;
+package com.ld.design.test;
 
+import com.ld.design.absFactory.*;
 import com.ld.design.factory.CircleFactory;
 import com.ld.design.factory.Factory;
+import com.ld.design.simple.Circle;
+import com.ld.design.simple.Product;
+import com.ld.design.simple.Rectangle;
+import com.ld.design.simple.SimpleFactory;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -26,6 +31,11 @@ public class Test {
         Factory factory = new CircleFactory();
         Circle circle = (Circle) factory.getProduct();
         circle.draw();
-
+        log.info("=============抽象工厂模式==================");
+        AllFactory allFactory = new AKFactory();
+        Guns akGuns = allFactory.makeGuns();
+        Bullet akBullet = allFactory.makeBullet();
+        akGuns.shooting();
+        akBullet.load();
     }
 }
