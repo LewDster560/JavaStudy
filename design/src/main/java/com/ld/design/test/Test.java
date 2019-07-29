@@ -1,6 +1,9 @@
 package com.ld.design.test;
 
 import com.ld.design.absFactory.*;
+import com.ld.design.build.AbstractBuild;
+import com.ld.design.build.Build;
+import com.ld.design.build.Director;
 import com.ld.design.factory.CircleFactory;
 import com.ld.design.factory.Factory;
 import com.ld.design.simple.Circle;
@@ -37,5 +40,10 @@ public class Test {
         Bullet akBullet = allFactory.makeBullet();
         akGuns.shooting();
         akBullet.load();
+        log.info("============建造者模式==================");
+        AbstractBuild build = new Build();
+        Director director = new Director(build);
+        director.getProduct();
+        build.getResult();
     }
 }
