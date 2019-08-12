@@ -14,7 +14,7 @@ public class DynamicProxyTest {
         WuLiangYe wuLiangYe = new WuLiangYe();
         wuLiangYe.setFlag(true);
 
-        InvocationHandler daiLi = new GuiTai(wuLiangYe);
+        InvocationHandler daiLi = new GuiTai(maoTai);
 
         Wine dynamicProxy = (Wine) Proxy.newProxyInstance(MaoTai.class.getClassLoader(), MaoTai.class.getInterfaces(), daiLi);
 
